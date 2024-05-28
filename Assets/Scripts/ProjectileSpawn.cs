@@ -7,7 +7,7 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject projSpread;
     public GameObject projBig;
     public GameObject projWave;
-
+    public float timeInBetween;
     public int ran;
     private int prevRan;
     // Start is called before the first frame update
@@ -16,8 +16,7 @@ public class ProjectileSpawn : MonoBehaviour
         InvokeRepeating("ChoseClone", 5f, 5f);
     }
 
-
-// Update is called once per frame
+    // Update is called once per frame   public float timeInBetween = (GameObject.Find("Codey").GetComponent<Move>().health) / 3f);
     void ChoseClone()
     {
         int ran = Random.Range(1, 4);

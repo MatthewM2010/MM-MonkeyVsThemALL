@@ -62,6 +62,11 @@ public class Move : MonoBehaviour
                 Respawn();
             }
         }
+        if (other.gameObject.tag == "Health")
+        {
+            health++;
+            healthText.text = "Health: " + health.ToString();
+        }
     }
 
     private void OnTriggerStay(Collider other)
@@ -93,6 +98,11 @@ public class Move : MonoBehaviour
         if (transform.position.y < (screenBounds.y * -1 - objectHeight) - 10)
         {
             Respawn();
+        }
+        if (health >= 6)
+        {
+            health = 5;
+            healthText.text = "Health: " + health.ToString();
         }
     }
 
