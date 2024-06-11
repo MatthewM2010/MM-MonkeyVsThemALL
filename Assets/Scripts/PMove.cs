@@ -5,8 +5,9 @@ using UnityEngine;
 using UnityEngine.UI;
 using UnityEngine.SceneManagement;
 
-public class Move : MonoBehaviour
+public class PMove : MonoBehaviour
 {
+    public CharacterController controller;
     private Vector2 screenBounds;
     private float objectHeight;
 
@@ -15,6 +16,7 @@ public class Move : MonoBehaviour
     private Rigidbody rb;
     public float jumpforce = 5f;
     public bool touchingGround;
+    public int dashStrenght;
 
     [Header("Health")]
     public int health = 5;

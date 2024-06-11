@@ -1046,9 +1046,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 96234e241823b3e4fb4cd141d4a5b1a1, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  controller: {fileID: 0}
   movementSpeed: 10
   jumpforce: 10
   touchingGround: 0
+  dashStrenght: 0
   health: 0
   healthText: {fileID: 297590402}
   invincible: 0
@@ -1811,6 +1813,7 @@ MonoBehaviour:
   projSpread: {fileID: 7270762086945256702, guid: 1e260ad852bbd4a45a982a94beddc7d9, type: 3}
   projBig: {fileID: 8160027062047893267, guid: 4906c82bcf68ba14e9e39523be1c3c71, type: 3}
   projWave: {fileID: 881629124230145676, guid: f52ea269661447c4084b542a20b36951, type: 3}
+  timeInBetween: 0
   ran: 0
 --- !u!4 &1981284838
 Transform:

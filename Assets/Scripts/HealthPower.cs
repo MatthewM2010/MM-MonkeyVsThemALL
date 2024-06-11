@@ -20,7 +20,7 @@ public class HealthPower : MonoBehaviour
 
     void Start()
     {
-        InvokeRepeating("SpawnClone", 6f, 10f);
+        InvokeRepeating("SpawnClone", 30f, 60f);
     }
     
     private void OnTriggerEnter(Collider other)
