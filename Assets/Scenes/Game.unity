@@ -1819,6 +1819,8 @@ MonoBehaviour:
   projWave: {fileID: 881629124230145676, guid: f52ea269661447c4084b542a20b36951, type: 3}
   projLava: {fileID: 6257633416585898388, guid: a6a0086411b70ea44830368cc955db3e, type: 3}
   projCritter: {fileID: 3495857375800011122, guid: 7857bd027f967be49844b9adba90a663, type: 3}
+  projSnake: {fileID: 5705602942168778240, guid: 9ec5ee6b2ff1ef24994b1f9966e6549d, type: 3}
+  projSnake2: {fileID: 8573759244895949468, guid: fe600c9204bcefa489fd491776b453a2, type: 3}
   timeInBetween: 0
   ran: 0
 --- !u!4 &1981284838
