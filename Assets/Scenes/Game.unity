@@ -577,6 +577,9 @@ PrefabInstance:
     - targetCorrespondingSourceObject: {fileID: 2698314866638446860, guid: b3b632acf26e04817952ec52895565e3, type: 3}
       insertIndex: -1
       addedObject: {fileID: 1160407788}
+    - targetCorrespondingSourceObject: {fileID: 2698314866638446860, guid: b3b632acf26e04817952ec52895565e3, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 1160407795}
   m_SourcePrefab: {fileID: 100100000, guid: b3b632acf26e04817952ec52895565e3, type: 3}
 --- !u!1 &297590400
 GameObject:
@@ -691,7 +694,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 0, y: 174}
+  m_AnchoredPosition: {x: 0, y: 193.1}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &475761216
@@ -1048,7 +1051,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
   movementSpeed: 10
-  jumpforce: 10
+  jumpforce: 15
   touchingGround: 0
   dashStrenght: 0
   health: 0
@@ -1105,6 +1108,48 @@ BoxCollider:
   serializedVersion: 3
   m_Size: {x: 0.89806175, y: 3.1065388, z: 1.1614667}
   m_Center: {x: -0.0045331717, y: 1.4513011, z: 0.03946048}
+--- !u!23 &1160407795
+MeshRenderer:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1160407787}
+  m_Enabled: 1
+  m_CastShadows: 1
+  m_ReceiveShadows: 1
+  m_DynamicOccludee: 1
+  m_StaticShadowCaster: 0
+  m_MotionVectors: 1
+  m_LightProbeUsage: 1
+  m_ReflectionProbeUsage: 1
+  m_RayTracingMode: 2
+  m_RayTraceProcedural: 0
+  m_RenderingLayerMask: 1
+  m_RendererPriority: 0
+  m_Materials:
+  - {fileID: 0}
+  m_StaticBatchInfo:
+    firstSubMesh: 0
+    subMeshCount: 0
+  m_StaticBatchRoot: {fileID: 0}
+  m_ProbeAnchor: {fileID: 0}
+  m_LightProbeVolumeOverride: {fileID: 0}
+  m_ScaleInLightmap: 1
+  m_ReceiveGI: 1
+  m_PreserveUVs: 0
+  m_IgnoreNormalsForChartDetection: 0
+  m_ImportantGI: 0
+  m_StitchLightmapSeams: 1
+  m_SelectedEditorRenderState: 3
+  m_MinimumChartSize: 4
+  m_AutoUVMaxDistance: 0.5
+  m_AutoUVMaxAngle: 89
+  m_LightmapParameters: {fileID: 0}
+  m_SortingLayerID: 0
+  m_SortingLayer: 0
+  m_SortingOrder: 0
+  m_AdditionalVertexStreams: {fileID: 0}
 --- !u!1 &1247864320
 GameObject:
   m_ObjectHideFlags: 0
@@ -1681,6 +1726,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 8355160922554007396, guid: 519decfb50033174ba8d0e9c1d60d932, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 55e28c38073e38c4fbe54c1a529f02d0, type: 2}
     - target: {fileID: 9005442734061948106, guid: 519decfb50033174ba8d0e9c1d60d932, type: 3}
       propertyPath: m_Name
       value: ball
@@ -1821,6 +1870,8 @@ MonoBehaviour:
   projCritter: {fileID: 3495857375800011122, guid: 7857bd027f967be49844b9adba90a663, type: 3}
   projSnake: {fileID: 5705602942168778240, guid: 9ec5ee6b2ff1ef24994b1f9966e6549d, type: 3}
   projSnake2: {fileID: 8573759244895949468, guid: fe600c9204bcefa489fd491776b453a2, type: 3}
+  projLizard: {fileID: 7861805452582613708, guid: a7bc5c5d62151e14999471a887c70ffa, type: 3}
+  projLizard2: {fileID: 7441374722528499275, guid: 56bd4918149b86542a06ca91a56e6c5c, type: 3}
   timeInBetween: 0
   ran: 0
 --- !u!4 &1981284838

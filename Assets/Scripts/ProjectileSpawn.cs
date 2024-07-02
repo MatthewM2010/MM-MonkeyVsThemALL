@@ -11,6 +11,8 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject projCritter;
     public GameObject projSnake;
     public GameObject projSnake2;
+    public GameObject projLizard;
+    public GameObject projLizard2;
     public float timeInBetween;
     public int ran;
     private int prevRan;
@@ -23,10 +25,10 @@ public class ProjectileSpawn : MonoBehaviour
     // Update is called once per frame   public float timeInBetween = (GameObject.Find("Codey").GetComponent<Move>().health) / 3f);
     void ChoseClone()
     {
-        int ran = Random.Range(1, 7);
+        int ran = Random.Range(1, 8);
         while (ran == prevRan) 
         {
-            ran = Random.Range(1, 7);
+            ran = Random.Range(1, 8);
             Debug.Log("reran");
         }
         if (ran == 1)
@@ -58,6 +60,11 @@ public class ProjectileSpawn : MonoBehaviour
         {
             CloneSnake();
             prevRan = 6;
+        }
+        if (ran == 7)
+        {
+            CloneLizard();
+            prevRan = 7;
         }
     }
 
@@ -92,6 +99,13 @@ public class ProjectileSpawn : MonoBehaviour
     {         
         Instantiate(projSnake, new Vector3(-20, 1, 0), projSnake.transform.rotation);
         Instantiate(projSnake2, new Vector3(20, 1, 0), projSnake2.transform.rotation);  
+    }
+    void CloneLizard()
+    {
+        Instantiate(projLizard2, new Vector3(-14, 20, 0), Quaternion.identity);
+        Instantiate(projLizard2, new Vector3(-13, 22, 0), Quaternion.identity);
+        Instantiate(projLizard, new Vector3(14, 20, 0), Quaternion.identity);
+        Instantiate(projLizard, new Vector3(13, 22, 0), Quaternion.identity);
     }
 
 }

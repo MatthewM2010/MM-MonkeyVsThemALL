@@ -45,6 +45,13 @@ public class PMove : MonoBehaviour
         {
             touchingGround = true;
         }
+        if (collision.gameObject.tag == "Projectile")
+        {
+            if (invincible == false)
+            {
+                Respawn();
+            }
+        }
     }
 
     private void OnCollisionExit(Collision collision)
@@ -52,6 +59,16 @@ public class PMove : MonoBehaviour
         if (collision.gameObject.tag == "Platform")
         {
             touchingGround = false;
+        }
+    }
+    private void OnCollisionStay(Collision collision)
+    {
+        if (collision.gameObject.tag == "Projectile")
+        {
+            if (invincible == false)
+            {
+                Respawn();
+            }
         }
     }
 
