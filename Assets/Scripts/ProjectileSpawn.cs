@@ -13,6 +13,7 @@ public class ProjectileSpawn : MonoBehaviour
     public GameObject projSnake2;
     public GameObject projLizard;
     public GameObject projLizard2;
+    public GameObject projDeer;
     public float timeInBetween;
     public int ran;
     private int prevRan;
@@ -25,10 +26,10 @@ public class ProjectileSpawn : MonoBehaviour
     // Update is called once per frame   public float timeInBetween = (GameObject.Find("Codey").GetComponent<Move>().health) / 3f);
     void ChoseClone()
     {
-        int ran = Random.Range(1, 8);
+        int ran = Random.Range(1, 9);
         while (ran == prevRan) 
         {
-            ran = Random.Range(1, 8);
+            ran = Random.Range(1, 9);
             Debug.Log("reran");
         }
         if (ran == 1)
@@ -66,6 +67,11 @@ public class ProjectileSpawn : MonoBehaviour
             CloneLizard();
             prevRan = 7;
         }
+        if (ran == 8)
+        {
+            CloneDeer();
+            prevRan = 8;
+        }
     }
 
     void CloneSpread()
@@ -102,10 +108,15 @@ public class ProjectileSpawn : MonoBehaviour
     }
     void CloneLizard()
     {
-        Instantiate(projLizard2, new Vector3(-14, 20, 0), Quaternion.identity);
+        Instantiate(projLizard2, new Vector3(-15, 20, 0), Quaternion.identity);
         Instantiate(projLizard2, new Vector3(-13, 22, 0), Quaternion.identity);
         Instantiate(projLizard, new Vector3(14, 20, 0), Quaternion.identity);
-        Instantiate(projLizard, new Vector3(13, 22, 0), Quaternion.identity);
+        Instantiate(projLizard, new Vector3(12, 22, 0), Quaternion.identity);
+    }
+    void CloneDeer()
+    {
+        for (int i = 0; i < 5; i++)
+            Instantiate(projDeer, new Vector3(-12 + i * 6, -20, 30), Quaternion.identity);
     }
 
 }

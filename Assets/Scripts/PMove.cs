@@ -12,11 +12,11 @@ public class PMove : MonoBehaviour
     private float objectHeight;
 
     [Header("Movement")]
-    public float movementSpeed;
+    public float Speed;
     private Rigidbody rb;
     public float jumpforce = 5f;
+    public float slamforce;
     public bool touchingGround;
-    public int dashStrenght;
 
     [Header("Health")]
     public int health = 5;
@@ -103,16 +103,20 @@ public class PMove : MonoBehaviour
         if (Input.GetKey("a") && !Input.GetKey("d"))
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);
-            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
         }
         if (Input.GetKey("d") && !Input.GetKey("a"))
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);
-            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * movementSpeed;
+            transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
         }
-        if (Input.GetKey("space") && touchingGround == true || Input.GetKey("w") && touchingGround == true)
+        if (Input.GetKeyDown("space") && touchingGround == true || Input.GetKeyDown("w") && touchingGround == true)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpforce, rb.velocity.z);
+        }
+        if (Input.GetKeyDown("s") && touchingGround == false)
+        {
+            rb.velocity = new Vector3(rb.velocity.x, -slamforce, rb.velocity.z);
         }
         if (transform.position.y < (screenBounds.y * -1 - objectHeight) - 10)
         {

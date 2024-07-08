@@ -1050,10 +1050,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   controller: {fileID: 0}
-  movementSpeed: 10
+  Speed: 10
   jumpforce: 15
+  slamforce: 25
   touchingGround: 0
-  dashStrenght: 0
   health: 0
   healthText: {fileID: 297590402}
   invincible: 0
@@ -1872,6 +1872,7 @@ MonoBehaviour:
   projSnake2: {fileID: 8573759244895949468, guid: fe600c9204bcefa489fd491776b453a2, type: 3}
   projLizard: {fileID: 7861805452582613708, guid: a7bc5c5d62151e14999471a887c70ffa, type: 3}
   projLizard2: {fileID: 7441374722528499275, guid: 56bd4918149b86542a06ca91a56e6c5c, type: 3}
+  projDeer: {fileID: 1180823965247575861, guid: 3c703a9ab600c9d4e812b4d6e4b6f3ad, type: 3}
   timeInBetween: 0
   ran: 0
 --- !u!4 &1981284838
