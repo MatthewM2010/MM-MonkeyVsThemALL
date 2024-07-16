@@ -17,11 +17,32 @@ public class ProjectileSpawn : MonoBehaviour
     public float timeInBetween;
     public int ran;
     private int prevRan;
+    public float time;
     // Start is called before the first frame update
     void Start()
     {
-        InvokeRepeating("ChoseClone", 5f, 5f);
+        StartCoroutine("CloneRepeating");
+        InvokeRepeating("ChangeTime", 15, 15);
     }
+
+    IEnumerator CloneRepeating()
+    {
+        while (true)
+        {
+            ChoseClone();
+            yield return new WaitForSeconds(time);
+        }
+    }
+
+    void ChangeTime()
+    {
+        if (time > 2)
+        {
+            time -= 0.1f;
+        }
+        
+    }
+
 
     // Update is called once per frame   public float timeInBetween = (GameObject.Find("Codey").GetComponent<Move>().health) / 3f);
     void ChoseClone()

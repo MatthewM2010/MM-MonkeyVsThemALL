@@ -38,7 +38,6 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.4647429, g: 0.5127423, b: 0.5769556, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -1798,6 +1797,7 @@ Terrain:
   m_DetailObjectDensity: 1
   m_HeightmapPixelError: 5
   m_SplatMapDistance: 1000
+  m_HeightmapMinimumLODSimplification: 0
   m_HeightmapMaximumLOD: 0
   m_ShadowCastingMode: 2
   m_DrawHeightmap: 1
@@ -1875,6 +1875,7 @@ MonoBehaviour:
   projDeer: {fileID: 1180823965247575861, guid: 3c703a9ab600c9d4e812b4d6e4b6f3ad, type: 3}
   timeInBetween: 0
   ran: 0
+  time: 5.2
 --- !u!4 &1981284838
 Transform:
   m_ObjectHideFlags: 0
