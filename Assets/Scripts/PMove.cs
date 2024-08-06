@@ -11,6 +11,10 @@ public class PMove : MonoBehaviour
     private Vector2 screenBounds;
     private float objectHeight;
 
+    [Header("Death Screen")]
+    public GameObject Smoke;
+    public bool dead;
+
     [Header("Movement")]
     public float Speed;
     private Rigidbody rb;
@@ -29,6 +33,9 @@ public class PMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        gameObject.SetActive(true);
+        Smoke.SetActive(false);
+        dead = false;
         invincible = true;
         IFrameCounter();
         health = 5;
@@ -134,12 +141,20 @@ public class PMove : MonoBehaviour
         health--;
         if (health <= 0)
         {
-            SceneManager.LoadScene(2);
+            gameObject.SetActive(false);
+            Smoke.transform.position = gameObject.transform.position;
+            Smoke.SetActive(true);
+            dead = true;
+            Invoke("Death", 7f);
         }
         transform.position = new Vector3(0, 10, 0);
         healthText.text = "Health: " + health.ToString();
         invincible = true;
         IFrameCounter();
+    }
+    void Death()
+    {
+        SceneManager.LoadScene(2);
     }
     public void IFrameCounter()
     {
