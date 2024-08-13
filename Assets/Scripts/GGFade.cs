@@ -7,14 +7,16 @@ using UnityEngine.UI;
 public class GGFade : MonoBehaviour
 {
     public Image Fade;
+    public GameObject FadeObj;
     // Start is called before the first frame update
     void Start()
     {
+        FadeObj.SetActive(true);
         StartCoroutine(FadeImage(getImageDone =>
         {
             if (getImageDone)
             {
-
+                FadeObj.SetActive (false);
             }
         }));
 
