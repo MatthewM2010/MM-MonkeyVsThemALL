@@ -18,7 +18,7 @@ public class ProjectileLava : MonoBehaviour
     void Update()
     {
         transform.Translate(0, speed * Time.deltaTime * dir, 0);
-        if (transform.position.y > -3.75)
+        if (transform.position.y > -4)
         {
             dir = -1;
         }
