@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class LizardMovement : MonoBehaviour
 {
+    private Animator Anim;
     public float xForce;
     public float yForce;
     public float xDirection;
@@ -12,11 +13,17 @@ public class LizardMovement : MonoBehaviour
     void Start()
     {
         enemyRigidBody = GetComponent<Rigidbody>();
+        Anim = GetComponent<Animator>();
     }
 
     // Update is called once per frame
     private void FixedUpdate()
     {
+        if( Anim != null)
+        {
+            Anim.Play("Eat");
+            Anim.Play("Shapekey.Eyes_Spin");
+        }
         if (transform.position.x <= -15)
         {
             xDirection = 1;

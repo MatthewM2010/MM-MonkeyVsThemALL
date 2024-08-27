@@ -11,6 +11,8 @@ public class PMove : MonoBehaviour
     private Vector2 screenBounds;
     private float objectHeight;
 
+    private Animator Anim;
+
     [Header("Death Screen")]
     public GameObject Smoke;
     public bool dead;
@@ -33,6 +35,7 @@ public class PMove : MonoBehaviour
     // Start is called before the first frame update
     void Start()
     {
+        Anim = GetComponent<Animator>();
         gameObject.SetActive(true);
         Smoke.SetActive(false);
         dead = false;
@@ -111,15 +114,42 @@ public class PMove : MonoBehaviour
         {
             transform.rotation = Quaternion.Euler(0, -90, 0);
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
+            if (Anim != null && touchingGround == true)
+            {
+                Anim.Play("Walk");
+            }
         }
         if (Input.GetKey("d") && !Input.GetKey("a"))
         {
             transform.rotation = Quaternion.Euler(0, 90, 0);
             transform.position += transform.TransformDirection(Vector3.forward) * Time.deltaTime * Speed;
+            if (Anim != null && touchingGround == true)
+            {
+                Anim.Play("Walk");
+            }
         }
         if (Input.GetKeyDown("space") && touchingGround == true || Input.GetKeyDown("w") && touchingGround == true)
         {
             rb.velocity = new Vector3(rb.velocity.x, jumpforce, rb.velocity.z);
+        }
+        if (touchingGround == false)
+        {
+            if (Anim != null)
+            {
+                Anim.Play("Fly");
+                Anim.Play("Shapekey.Eyes_Squint");
+            }
+        }
+        else
+        {
+            if(Anim != null)
+            {
+                Anim.Play("Shapekey.Eyes_Blink");
+            }
+        }
+        if (Anim != null && !Input.GetKeyDown("s") && !Input.GetKeyDown("a") && touchingGround == true && !touchingGround == false)
+        {
+           Anim.Play("Idle_A");
         }
         if (Input.GetKeyDown("s") && touchingGround == false)
         {

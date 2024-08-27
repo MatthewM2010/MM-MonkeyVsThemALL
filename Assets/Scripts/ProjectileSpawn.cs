@@ -98,7 +98,7 @@ public class ProjectileSpawn : MonoBehaviour
     void CloneSpread()
     {
         for (int i = 0; i < 7; i++)
-            Instantiate(projSpread, new Vector3(-15 + i * 5.0f, 20, 0), Quaternion.identity);
+            Instantiate(projSpread, new Vector3(-15 + i * 5.0f, 20, 0), projSpread.transform.rotation);
     }
 
     void CloneBig()
